@@ -1,0 +1,90 @@
+<div class='container-fluid'>    
+    <div ng-include src="'/partials/navigation.html'"></div>
+    <div class='container-fluid'>
+        <div class='row'>
+                <!--<div class="page-header">
+                  
+                </div>-->
+            <div class="col-md-6">
+                <form role='form' class="new_form">
+                    
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Lisää resepti</h3>
+                        </div>
+                        <div class="panel-body">
+                            
+                            <div class="form-group">
+                                <!--subject -->
+                                <label for="name">Reseptin nimi</label><br/>
+                                <input type="text" id="name" class="form-control" ng-model='recipe.subject'>
+                    
+                                <br/>
+                                <!--category -->
+                                <label for="">Kategoria</label><br/>
+                                    <div data-role="fieldcontain">
+                                        <fieldset data-role="controlgroup" data-type="horizontal">
+                                            <!--<legend>Font styling:</legend>-->
+                                            <input type="checkbox" name="checkbox-6" id="checkbox-6" class="custom">
+                                            <label for="checkbox-6">b</label>
+                                            <input type="checkbox" name="checkbox-7" id="checkbox-7" class="custom">
+                                            <label for="checkbox-7"><em>i</em></label>
+                                            <input type="checkbox" name="checkbox-8" id="checkbox-8" class="custom">
+                                            <label for="checkbox-8">u</label>
+                                        </fieldset>
+                                    </div>
+
+                                <br/>
+                                <!--amount -->
+                                <label for="">Määrä</label><br/>
+                                    <div class="col-lg-6">
+                                        <div class="input-group">
+                                            
+                                        
+                                        
+                                        
+                                        <!--
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <input type="radio" aria-label="..."> kpl
+                                            </span>
+                                            <input type="text" class="form-control" aria-label="...">
+                                            
+                                            <span class="input-group-addon">
+                                                <input type="radio" aria-label="...">
+                                            </span>
+                                            <input type="text" class="form-control" aria-label="...">
+                                        </div><!-- /input-group 
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <input type="radio" aria-label="...">
+                                            </span>
+                                            <input type="text" class="form-control" aria-label="...">
+                                        </div>--><!-- /input-group -->
+                                    </div><!-- /.col-lg-6 -->
+                                <br/>
+                                <br/>
+                                <!--ingredients -->
+                                <label for="">Raaka-aineet</label><br/>
+                                
+                    
+                                <br/>
+                                <!--instructions -->
+                                <label for="">Ohjeet</label><br/>
+                                <textarea class="form-control" ng-model='recipe.instructions'></textarea>
+                                
+                                <br/>
+                                <!--description -->
+                                <label for="">Kuvaus</label><br/>
+                                <textarea class="form-control" ng-model='recipe.description'></textarea>
+
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button type="button" class="btn btn-default" ng-click='message.send()'>Tallenna</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
