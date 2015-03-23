@@ -1,5 +1,6 @@
 var User = require('./database').User;
 var Message = require('./database').Message;
+var Recipe = require('./database').Recipe;
 
 //Use this for store new user for our application
 module.exports.registerUser = function(req,res){
@@ -18,6 +19,14 @@ module.exports.registerUser = function(req,res){
             res.send({status:'Ok'});
         }
     });
+}
+
+// new recipe
+module.exports.addRecipe = function(data){
+    User.findOne({name:data.owner},function(err,user){
+    //kesken
+    }
+    
 }
 
 //Called when we need to store message for user
