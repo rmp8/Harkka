@@ -38,7 +38,9 @@ app.use(passport.session());
 
 //Here is my middleware
 app.use('/app',user);
+app.use('/recipe',recipe);
 app.use('/message',message);
+
 
 app.get('/authenticate',function(req,res){
     if(req.user){

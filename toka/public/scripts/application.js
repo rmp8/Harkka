@@ -35,9 +35,9 @@ module.config(function($routeProvider,$locationProvider,$httpProvider){
         resolve:{loginRequired:loginRequired}
     });
     
-    $routeProvider.when('/newR',{
+    $routeProvider.when('/newRecipe',{
         templateUrl:'partials/newRecipe.html',
-        //controller:'RecipeController',
+        controller:'RecipeController',
         //resolve:{loginRequired:loginRequired}
     });
     

@@ -22,10 +22,20 @@ module.exports.registerUser = function(req,res){
 }
 
 // new recipe
-module.exports.addRecipe = function(data){
+module.exports.newRecipe = function(data){
     User.findOne({name:data.owner},function(err,user){
     //kesken
-    }
+        if(!err){
+            var recipe = new Recipe();
+            recipe.owner = user;
+            recipe.subject = data.subject;
+            user.recipes.push(recipe);
+            recipe.save();
+            user.save();
+            
+        }
+    });
+                 
     
 }
 
@@ -93,7 +103,7 @@ module.exports.getFilterNames = function(req,res){
     });
 }
 
-module.exports.getMesagesForUser = function(req,res){
+module.exports.getMessagesForUser = function(req,res){
 
     var options = {
         path:'messages',

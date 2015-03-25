@@ -7,7 +7,7 @@ router.get('/',function(req,res){
 });
 
 router.get('/forUser',function(req,res){
-    req.queries.getMesagesForUser(req,res);
+    req.queries.getMessagesForUser(req,res);
 });
 
 router.get('/filters',function(req,res){

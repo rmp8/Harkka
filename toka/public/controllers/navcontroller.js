@@ -10,7 +10,7 @@ module.controller('NavController',['$scope','$location','SocketFactory',function
     }
     
     $scope.nav.newRecipe = function(){
-        $location.path('/newR');
+        $location.path('/newRecipe');
     }
     
     $scope.nav.newMessage = function(){
