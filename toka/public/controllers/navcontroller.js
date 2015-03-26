@@ -5,7 +5,7 @@ module.controller('NavController',['$scope','$location','SocketFactory',function
         SocketFactory.logout();
     }
     
-    $scope.nav.filterMessasges = function(){
+    $scope.nav.filterMessages = function(){
         $location.path('/filter');
     }
     

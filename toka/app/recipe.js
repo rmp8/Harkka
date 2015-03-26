@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 
 
+
+/*
 router.get('/',function(req,res){
     req.queries.getRecentPosts(req,res);
 });
@@ -22,6 +24,6 @@ router.delete('/',function(req,res){
     
     req.queries.deleteMessage(req,res);
 });
-
+*/
 
 module.exports = router;

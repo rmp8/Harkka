@@ -19,7 +19,7 @@
                 <input type="checkbox" id="box" class="form-control" ng-model='user.cheked'>
             </div>
             <button type="button" class="btn btn-default" ng-click='user.login()'>Login</button>
-            <button type="button" class="btn btn-default" ng-disabled='!user.cheked' ng-click='user.register()'>Register</button>
+            <button type="button" class="btn btn-default" ng-disabled='!user.checked' ng-click='user.register()'>Register</button>
         </form>
         <p ng-show='user.loginFailed'>Username or password incorrect!</p>
         <p class='error' ng-show='user.showError'>Username allready in use. Try another one</p>

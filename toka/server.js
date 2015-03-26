@@ -10,9 +10,11 @@ require('./app/passport')(passport);
 
 var db = require('./app/database');
 var user = require('./app/user');
+var recipe = require('./app/recipe');
 var queries = require('./app/queries');
 var message = require('./app/message'); 
-var recipe = require('./app/recipe');
+
+
 var app = express();
 //These are needed for sockets
 var server = require('http').Server(app);

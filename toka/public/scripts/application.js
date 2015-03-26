@@ -30,14 +30,16 @@ module.config(function($routeProvider,$locationProvider,$httpProvider){
     });
     
     $routeProvider.when('/user',{
-        templateUrl:'partials/userdata.html',
-        controller:'MessageController',
+        templateUrl:'partials/welcome.html',
+        //templateUrl:'partials/userdata.html',
+        //controller:'MessageController',
         resolve:{loginRequired:loginRequired}
     });
-    
+    console.log('newRecipe1');
     $routeProvider.when('/newRecipe',{
-        templateUrl:'partials/newRecipe.html',
-        controller:'RecipeController',
+        //console.log('newRecipe1');
+        templateUrl:'partials/newRecipe.html'
+        //controller:'RecipeController',
         //resolve:{loginRequired:loginRequired}
     });
     

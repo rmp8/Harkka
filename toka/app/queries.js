@@ -23,16 +23,33 @@ module.exports.registerUser = function(req,res){
 
 // new recipe
 module.exports.newRecipe = function(data){
+    console.log('new recipe');
     User.findOne({name:data.owner},function(err,user){
     //kesken
         if(!err){
+            var recipeData = new Recipe({
+                //owner:req.body.user;
+                subject:req.body.subject
+                
+                /*
+                nimi:req.body.nimi,
+                aineet:req.body.aineet,
+                valmistus:req.body.valmistus,
+                lahde:req.body.lahde,
+                paivays:new Date(req.body.paivays)
+                */
+            });
+            
+            recipeData.save();
+            
+            /*
             var recipe = new Recipe();
             recipe.owner = user;
             recipe.subject = data.subject;
             user.recipes.push(recipe);
             recipe.save();
             user.save();
-            
+            */
         }
     });
                  

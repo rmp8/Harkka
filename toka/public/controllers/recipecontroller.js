@@ -9,6 +9,7 @@ module.controller('RecipeController',['$scope','LoginFactory','SocketFactory',fu
     //});
     
     $scope.recipe.save = function(){
+        console.log('newRecipeC');
         var recipe = {};
         recipe.owner = $scope.recipe.user;
         recipe.subject = $scope.recipe.subject;
@@ -16,13 +17,14 @@ module.controller('RecipeController',['$scope','LoginFactory','SocketFactory',fu
         //message.timestamp = new Date();
         
         //SocketFactory.sendMessage(message);
+        newRecipe(recipe);
         $scope.recipe.subject = "";
         //$scope.message.text = "";
     }
     //Will be called when server send socket response
     //SocketFactory.notify = function(data){
-        $scope.recipe.recipes.push(data);
-        $scope.$apply();
+        //$scope.recipe.recipes.push(data);
+        //$scope.$apply();
     //};
     
 }]);
