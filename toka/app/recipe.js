@@ -2,6 +2,14 @@ var express = require('express');
 var router = express.Router();
 
 
+// Talletetaan 
+router.post('/newRecipe',function(req,res){
+    req.queries.newRecipe(req,res);
+});
+
+router.get('/getAllRecipes',function(req,res){
+    req.queries.getRecipes(req,res);
+});
 
 /*
 router.get('/',function(req,res){

@@ -16,12 +16,12 @@
                             
                             <div class="form-group">
                                 <!--subject -->
-                                <label for="name">Reseptin nimi</label><br/>
-                                <input type="text" id="name" class="form-control" ng-model='recipe.subject'>
+                                <label for="subject">Reseptin nimi</label><br/>
+                                <input type="text" id="subject" class="form-control" ng-model='recipe.subject'>
                     
                                 <br/>
                                 <!--category -->
-                                <label for="">Kategoria</label><br/>
+                                <label for="cat">Kategoria</label><br/>
                                     <div data-role="fieldcontain">
                                         
                                         <fieldset data-role="controlgroup" data-type="horizontal">
@@ -56,7 +56,7 @@
 
                                 <br/>
                                 <!--amount -->
-                                <label for="">Määrä</label><br/>
+                                <label for="amount">Määrä</label><br/>
                                     <div class="col-lg-6">
                                         <div class="input-group">
                                             
@@ -86,17 +86,17 @@
                                 <br/>
                                 <br/>
                                 <!--ingredients -->
-                                <label for="">Raaka-aineet</label><br/>
+                                <label for="ing">Raaka-aineet</label><br/>
                                 
                     
                                 <br/>
                                 <!--instructions -->
-                                <label for="">Ohjeet</label><br/>
+                                <label for="inst">Ohjeet</label><br/>
                                 <textarea class="form-control" ng-model='recipe.instructions'></textarea>
                                 
                                 <br/>
                                 <!--description -->
-                                <label for="">Kuvaus</label><br/>
+                                <label for="desc">Kuvaus</label><br/>
                                 <textarea class="form-control" ng-model='recipe.description'></textarea>
                                         
                                 <label for="source">Lähde</label><br/>
@@ -106,7 +106,7 @@
                         </div>
                     </div>
                                         
-                    <button type="button" class="btn btn-default" ng-click='save()'>Tallenna</button>
+                    <button type="button" class="btn btn-default" ng-click='recipe.newRecipe()'>Tallenna</button>
                 </form>
             </div>
         </div>

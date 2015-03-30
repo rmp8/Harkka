@@ -5,12 +5,17 @@ module.controller('NavController',['$scope','$location','SocketFactory',function
         SocketFactory.logout();
     }
     
-    $scope.nav.filterMessages = function(){
-        $location.path('/filter');
-    }
-    
     $scope.nav.newRecipe = function(){
         $location.path('/newRecipe');
+    }
+    
+    $scope.nav.recentRecipes = function(){
+        $location.path('/recentRecipes');
+    }
+    
+    
+    $scope.nav.filterMessages = function(){
+        $location.path('/filter');
     }
     
     $scope.nav.newMessage = function(){

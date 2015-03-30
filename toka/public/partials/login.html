@@ -12,11 +12,11 @@
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="text" id="email" class="form-control" ng-disabled='!user.cheked' ng-model='user.email' ng-required='user.cheked'>
+                <input type="text" id="email" class="form-control" ng-disabled='!user.checked' ng-model='user.email' ng-required='user.checked'>
             </div>
             <div class="form-group">
                 <label for="box">Enable registering</label>
-                <input type="checkbox" id="box" class="form-control" ng-model='user.cheked'>
+                <input type="checkbox" id="box" class="form-control" ng-model='user.checked'>
             </div>
             <button type="button" class="btn btn-default" ng-click='user.login()'>Login</button>
             <button type="button" class="btn btn-default" ng-disabled='!user.checked' ng-click='user.register()'>Register</button>

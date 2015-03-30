@@ -21,16 +21,31 @@ module.exports.registerUser = function(req,res){
     });
 }
 
+console.log(Recipe);
 // new recipe
-module.exports.newRecipe = function(data){
+module.exports.newRecipe = function(req,res){
     console.log('new recipe');
     User.findOne({name:data.owner},function(err,user){
     //kesken
         if(!err){
-            var recipeData = new Recipe({
-                //owner:req.body.user;
-                subject:req.body.subject
-                
+            var rec = new Recipe();
+                //{
+            rec.owner = user;
+            rec.subject = data.subject;
+             
+            //Store model in database
+            rec.save(function(err){
+                if(err){
+                    res.send({status:'Error'})
+                }
+                else{
+                    res.send({status:'Ok'});
+                }
+            });
+            //user.recipes.push(recipeData);
+            
+            //recipeData.save();
+            //user.save();
                 /*
                 nimi:req.body.nimi,
                 aineet:req.body.aineet,
@@ -38,9 +53,10 @@ module.exports.newRecipe = function(data){
                 lahde:req.body.lahde,
                 paivays:new Date(req.body.paivays)
                 */
-            });
+            }
+        //);
             
-            recipeData.save();
+            //recipeData.save();
             
             /*
             var recipe = new Recipe();
@@ -50,10 +66,22 @@ module.exports.newRecipe = function(data){
             recipe.save();
             user.save();
             */
-        }
+        //}
     });
                  
     
+}
+
+module.exports.getRecipes = function(req,res){
+
+    var options = {
+        path:'recipes',
+        options:{limit:30,sort:{_id: -1}}
+    };
+
+    User.findOne({name:req.user.name}).populate(options).exec(function(err,popul){
+        res.send(popul);
+    });
 }
 
 //Called when we need to store message for user

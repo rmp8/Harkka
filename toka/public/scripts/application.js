@@ -38,7 +38,14 @@ module.config(function($routeProvider,$locationProvider,$httpProvider){
     console.log('newRecipe1');
     $routeProvider.when('/newRecipe',{
         //console.log('newRecipe1');
-        templateUrl:'partials/newRecipe.html'
+        templateUrl:'partials/newRecipe.html',
+        controller:'RecipeController'
+        //resolve:{loginRequired:loginRequired}
+    });
+    
+    $routeProvider.when('/recentRecipes',{
+        //console.log('newRecipe1');
+        templateUrl:'partials/recentRecipes.html'
         //controller:'RecipeController',
         //resolve:{loginRequired:loginRequired}
     });
