@@ -40,9 +40,11 @@ app.use(passport.session());
 
 //Here is my middleware
 app.use('/app',user);
-app.use('/recipe',recipe);
-app.use('/message',message);
 
+app.use('/message',message);
+console.log('test');
+app.use('/recipe',recipe);
+console.log('test2');
 
 app.get('/authenticate',function(req,res){
     if(req.user){
@@ -67,5 +69,5 @@ io.on('connection',function(socket){
     });
 });
 
-
+console.log('listen');
 server.listen(3000);

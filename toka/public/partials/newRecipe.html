@@ -6,7 +6,7 @@
                   
                 </div>-->
             <div class="col-md-6">
-                <form role='form' class="new_form">
+                <form role='form' name='newRecipeForm' ng-submit="recipe.save()">
                     
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -105,8 +105,11 @@
                             </div>
                         </div>
                     </div>
-                                        
-                    <button type="button" class="btn btn-default" ng-click='recipe.newRecipe()'>Tallenna</button>
+                                 
+                    <span>
+                        <input type="submit" class="btn" value="Tallenna" />
+                    </span>
+                    <!--<button type="button" class="btn btn-default" ng-click='recipe.newRecipe()'>Tallenna</button> -->
                 </form>
             </div>
         </div>

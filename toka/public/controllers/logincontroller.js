@@ -12,6 +12,7 @@ module.controller('LoginController',['$scope','$location','$rootScope','LoginFac
         
         //This will start login procedure
         LoginFactory.userLogin(userData);
+        console.log('testL');
     }
     
     //This is called when register button is pressed

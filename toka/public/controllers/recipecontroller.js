@@ -1,7 +1,7 @@
 //module.controller('RecipeController',['$scope','LoginFactory','SocketFactory','RecipeFactory',function($scope,LoginFactory,SocketFactory,RecipeFactory){
 module.controller('RecipeController',['$scope','$location','RecipeFactory',function($scope,$location,RecipeFactory){
     
-    $scope.recipeData = {};
+    $scope.recipe = {};
     //$scope.recipe.recipes = [];
     
     //SocketFactory.getRecentPosts().then(function(data){
@@ -11,13 +11,13 @@ module.controller('RecipeController',['$scope','$location','RecipeFactory',funct
     
     $scope.recipe.save = function(){
         console.log('newRecipeC');
-        var recipeData = {};
-        recipeData.owner = $scope.recipe.user;
-        recipeData.subject = $scope.recipe.subject;
+        var recipe = {};
+        recipe.owner = $scope.recipe.user;
+        recipe.subject = $scope.recipe.subject;
         //message.text = $scope.message.text;
         //message.timestamp = new Date();
         
-        RecipeFactory.newRecipe(recipeData);
+        RecipeFactory.newRecipe(recipe);
         //SocketFactory.sendMessage(message);
         //newRecipe(recipe);
         //$scope.recipe.subject = "";

@@ -5,6 +5,7 @@ var router = express.Router();
 
 router.post('/login', passport.authenticate('local-login'),function(req,res){
     res.send({name:req.user.name});
+    console.log('ulogin');
 });
 
 router.post('/register',function(req,res){

@@ -1,9 +1,11 @@
 module.factory('RecipeFactory',['$resource','$location','$rootScope',function($resource,$location,$rootScope){
     
     var factory = {};
-    factory.getRecipes = function(){
-        
-        return $resource('/recipe/forUser').get().$promise;
+    
+    factory.recentRecipes = function(){
+        console.log('testingrR');
+        return $resource('/recipe/').get().$promise;
+        //return $resource('/recipe/forUser').get().$promise;
     }
     /*
     factory.deleteMessage = function(id){
@@ -11,10 +13,11 @@ module.factory('RecipeFactory',['$resource','$location','$rootScope',function($r
         return $resource('/recipe/',{id:id}).delete().$promise
         
     }*/
+    /*recentRecipes?*/
     
-    factory.newRecipe = function(recipeData){
+    factory.newRecipe = function(recipe){
         console.log('testingRecipe1');
-        return $resource('/app/newRecipe',{},{post:{method:'POST'}}).post(recipeData).$promise; //
+        return $resource('/recipe/newR',{},{post:{method:'POST'}}).post(recipe).$promise; //app?
         
         //return $resource('/message/filtered/',{id:data}).get().$promise;
         

@@ -21,6 +21,8 @@ var user = new Schema({
     recipes:[{type:Schema.Types.ObjectId,ref:'Recipe'}]
 });
 
+console.log('test3');
+
 user.methods.generateHash = function(password) {
     return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
 };
@@ -57,3 +59,4 @@ var Recipe = mongoose.model('Recipe',recipe);
 module.exports.User = User;
 module.exports.Message = Message;
 module.exports.Recipe = Recipe;
+console.log('test4');

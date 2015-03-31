@@ -1,5 +1,5 @@
 module.factory('SocketFactory',['$resource','$location',function($resource,$location){
-    
+    console.log('testS');
     var factory={};
     
     factory.getRecentPosts = function(){

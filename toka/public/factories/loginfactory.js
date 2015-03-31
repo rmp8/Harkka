@@ -1,5 +1,5 @@
 module.factory('LoginFactory',['$resource','$location','$rootScope',function($resource,$location,$rootScope){
-    
+    console.log('testLF');
     var factory = {};
     factory.loginFailed = false;
     factory.userLogin = function(userData){

@@ -2,6 +2,8 @@ var User = require('./database').User;
 var Message = require('./database').Message;
 var Recipe = require('./database').Recipe;
 
+console.log('queries');
+
 //Use this for store new user for our application
 module.exports.registerUser = function(req,res){
     
@@ -21,17 +23,18 @@ module.exports.registerUser = function(req,res){
     });
 }
 
-console.log(Recipe);
+//console.log(Recipe);
 // new recipe
 module.exports.newRecipe = function(req,res){
     console.log('new recipe');
-    User.findOne({name:data.owner},function(err,user){
-    //kesken
+    User.findOne({name:req.user.name},function(err,user){
+    //User.findOne({name:data.owner},function(err,user){
+        console.log(req.user.name);
         if(!err){
             var rec = new Recipe();
                 //{
             rec.owner = user;
-            rec.subject = data.subject;
+            rec.subject = req.body.subject; //recipe.subject;
              
             //Store model in database
             rec.save(function(err){
@@ -40,6 +43,7 @@ module.exports.newRecipe = function(req,res){
                 }
                 else{
                     res.send({status:'Ok'});
+                    console.log('Ok');
                 }
             });
             //user.recipes.push(recipeData);
@@ -72,8 +76,9 @@ module.exports.newRecipe = function(req,res){
     
 }
 
-module.exports.getRecipes = function(req,res){
+module.exports.recentRecipes = function(req,res){
 
+    console.log('rr');
     var options = {
         path:'recipes',
         options:{limit:30,sort:{_id: -1}}

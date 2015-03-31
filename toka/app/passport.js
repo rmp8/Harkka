@@ -34,6 +34,7 @@ module.exports = function(passport) {
                 return done(null, false, "wrong password"); 
             }
             // All fine continue
+            console.log('pp_ok');
             return done(null, user);
         });
         

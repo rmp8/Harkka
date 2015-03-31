@@ -1,5 +1,5 @@
 var module = angular.module('Harkka',['ngRoute','ngResource','ngAnimate','ngCookies']);
-
+console.log('appl');
 var authenticationFailed = function($q,$rootScope){
     var responseInterceptor = {
         response: function(response) {
@@ -24,10 +24,12 @@ var authenticationFailed = function($q,$rootScope){
 module.config(function($routeProvider,$locationProvider,$httpProvider){
     
     $locationProvider.html5Mode(true);
+    
     $routeProvider.when('/',{
         templateUrl:'partials/login.html',
-        controller:'LoginController',
+        controller:'LoginController'
     });
+    
     
     $routeProvider.when('/user',{
         templateUrl:'partials/welcome.html',
@@ -36,6 +38,7 @@ module.config(function($routeProvider,$locationProvider,$httpProvider){
         resolve:{loginRequired:loginRequired}
     });
     console.log('newRecipe1');
+    
     $routeProvider.when('/newRecipe',{
         //console.log('newRecipe1');
         templateUrl:'partials/newRecipe.html',
